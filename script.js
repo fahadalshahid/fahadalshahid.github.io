@@ -1,5 +1,5 @@
 const text = [
-  "Computer Science Student",
+  "Computer Science Graduate",
   "MERN Stack Developer",
   "AI & Software Enthusiast"
 ];
@@ -19,8 +19,8 @@ let letter = "";
   if (letter.length === currentText.length) {
     count++;
     index = 0;
-    setTimeout(type, 2500); // Wait longer on full text for readability
+    setTimeout(type, 2500); // Wait on full text
   } else {
-    setTimeout(type, 70);
+    setTimeout(type, 80);
   }
 })();
