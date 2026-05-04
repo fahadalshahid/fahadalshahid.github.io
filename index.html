@@ -2,95 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fahad Al Shahid | Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
 <canvas id="matrix"></canvas>
 
 <div class="content">
-
   <header>
-    <h1>Fahad Al Shahid</h1>
-    <p id="typing"></p>
+    <div class="profile-container">
+      <img src="your-photo.jpg" alt="Fahad Al Shahid" class="profile-img">
+    </div>
+
+    <h1>FAHAD AL SHAHID</h1>
+    <div class="typing-container">
+      <span id="typing"></span><span class="cursor">|</span>
+    </div>
     
-    <div class="contact-top">
-      <p>📧 fahadalshahid126@gmail.com</p>
-      <p>📞 +8801933788018</p>
-      <p>🔗 <a href="https://github.com/fahadalshahid" target="_blank">GitHub Profile</a></p>
+    <div class="social-icons">
+      <a href="mailto:fahadalshahid126@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/fahadalshahid" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook"></i></a>
     </div>
   </header>
 
   <section>
-    <h2>> Career Objective</h2>
-    <p>
-      I want to build my career in a challenging and rewarding position where 
-      creativity, sincerity, skill, and performance are recognized.
-    </p>
+    <h2><i class="fas fa-graduation-cap"></i> EDUCATION</h2>
+    <div class="entry">
+      <div class="row">
+        <strong>BRAC University</strong>
+        <span>Sept 2022 – 2026</span>
+      </div>
+      <p>BSc in Computer Science | <strong>CGPA: 3.73 / 4.00</strong></p>
+      <p>Relevant Coursework: Cryptography, Blockchain, MERN Stack</p>
+    </div>
   </section>
 
   <section>
-    <h2>> Education</h2>
-    <p><strong>BSc in Computer Science</strong> — BRAC University (2026)</p>
-    <p>CGPA: 3.73 / 4.00</p>
-
-    <p><strong>HSC</strong> — Dhaka City College (2020)</p>
-    <p>GPA: 5.00</p>
-
-    <p><strong>SSC</strong> — Monipur High School & College (2018)</p>
-    <p>GPA: 5.00</p>
-  </section>
-
-  <section>
-    <h2>> Experience</h2>
-    <p><strong>CRE (Careline Part-Time)</strong></p>
-    <p>Pureit Bangladesh | Feb 2025 – Apr 2025</p>
-  </section>
-
-  <section>
-    <h2>> Skills</h2>
-    <ul>
-      <li>Python</li>
-      <li>MERN Stack</li>
-      <li>MySQL</li>
-      <li>C++</li>
-      <li>Java</li>
-      <li>Cryptography & Blockchain</li>
-      <li>Microsoft Office</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>> Projects</h2>
-    <div class="card">
+    <h2><i class="fas fa-project-diagram"></i> PROJECTS</h2>
+    
+    <div class="project-box">
       <h3>Doctor Portal System</h3>
-      <p>MERN stack project with authentication and dashboard</p>
+      <ul>
+        <li>Developed a full-stack healthcare platform using the <strong>MERN</strong> stack.</li>
+        <li>Integrated secure user authentication and a dynamic appointment dashboard.</li>
+        <li>Optimized database queries for real-time patient-doctor scheduling.</li>
+      </ul>
     </div>
 
-    <div class="card">
+    <div class="project-box">
       <h3>Protein Analysis Pipeline</h3>
-      <p>Bioinformatics-based reasoning system</p>
+      <ul>
+        <li>Engineered a bioinformatics reasoning system for molecular data analysis.</li>
+        <li>Implemented Python-based algorithms to process complex protein structures.</li>
+        <li>Visualized genomic data to assist in structural biological research.</li>
+      </ul>
     </div>
   </section>
 
   <section>
-    <h2>> Extracurricular</h2>
-    <p>Former Member — IEEE RAS Student Branch, BRAC University</p>
+    <h2><i class="fas fa-code"></i> TECHNICAL SKILLS</h2>
+    <div class="skills-grid">
+      <span><strong>Languages:</strong> Python, C++, Java, JavaScript, MySQL</span>
+      <span><strong>Frameworks:</strong> MERN (MongoDB, Express, React, Node)</span>
+      <span><strong>Specialized:</strong> Cryptography & Blockchain</span>
+    </div>
   </section>
-
-  <section>
-    <h2>> Languages</h2>
-    <p>Bengali — Fluent</p>
-    <p>English — Fluent</p>
-  </section>
-
-  <section>
-    <h2>> Contact</h2>
-    <p>Email: fahadalshahid126@gmail.com</p>
-    <p>Phone: +8801933788018</p>
-  </section>
-
 </div>
 
 <script src="script.js"></script>
