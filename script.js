@@ -1,4 +1,4 @@
-// Typing Effect
+// Typing Effect logic
 const roles = [
   "Computer Science Student",
   "MERN Stack Developer",
@@ -26,7 +26,7 @@ let letter = "";
   }
 })();
 
-// Matrix Rain Animation
+// Matrix Background logic
 const canvas = document.getElementById("matrix");
 const ctx = canvas.getContext("2d");
 
