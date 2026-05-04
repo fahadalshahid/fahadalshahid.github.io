@@ -1,35 +1,64 @@
+// Typing Effect
 const roles = [
   "Computer Science Student",
   "MERN Stack Developer",
   "AI Enthusiast"
 ];
 
-let roleIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
 
-function typeEffect() {
-  const currentRole = roles[roleIndex];
-  const typingElement = document.getElementById("typing");
+(function type() {
+  if (count === roles.length) count = 0;
+  currentText = roles[count];
+  letter = currentText.slice(0, ++index);
 
-  if (isDeleting) {
-    typingElement.textContent = currentRole.substring(0, charIndex--);
+  document.getElementById("typing").textContent = letter;
+
+  if (letter.length === currentText.length) {
+    count++;
+    index = 0;
+    setTimeout(type, 2000);
   } else {
-    typingElement.textContent = currentRole.substring(0, charIndex++);
+    setTimeout(type, 100);
   }
+})();
 
-  let typeSpeed = isDeleting ? 50 : 100;
+// Matrix Rain Animation
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
 
-  if (!isDeleting && charIndex === currentRole.length + 1) {
-    typeSpeed = 2000; // Pause at end of word
-    isDeleting = true;
-  } else if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    roleIndex = (roleIndex + 1) % roles.length;
-    typeSpeed = 500;
-  }
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
 
-  setTimeout(typeEffect, typeSpeed);
+const characters = "01";
+const fontSize = 16;
+const columns = canvas.width / fontSize;
+const drops = Array(Math.floor(columns)).fill(1);
+
+function drawMatrix() {
+  ctx.fillStyle = "rgba(10, 10, 10, 0.1)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  ctx.fillStyle = "#00ff41";
+  ctx.font = fontSize + "px monospace";
+
+  drops.forEach((y, i) => {
+    const text = characters[Math.floor(Math.random() * characters.length)];
+    ctx.fillText(text, i * fontSize, y * fontSize);
+
+    if (y * fontSize > canvas.height && Math.random() > 0.975) {
+      drops[i] = 0;
+    }
+    drops[i]++;
+  });
 }
 
-document.addEventListener("DOMContentLoaded", typeEffect);
+setInterval(drawMatrix, 50);
+
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
