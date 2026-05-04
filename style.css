@@ -15,51 +15,52 @@ body {
 }
 
 .content {
-  max-width: 800px;
-  margin: 40px auto;
+  max-width: 850px;
+  margin: 60px auto;
   padding: 20px;
 }
 
-/* Photo Styling */
+/* Photo Styling Fix */
 .profile-container {
-  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 35px;
 }
 
 .profile-img {
-  width: 140px;
-  height: 140px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   border: 3px solid var(--accent-color);
   object-fit: cover;
-  box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
 }
 
 header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 
+/* Spacing Fix for Name and Description */
 h1 {
-  font-size: 2.4rem;
+  font-size: 2.6rem;
   letter-spacing: 2px;
-  margin: 10px 0;
+  margin: 0 0 15px 0; /* Created clear gap below name */
+  color: #ffffff;
 }
 
 .typing-container {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--accent-color);
   font-family: 'Courier New', Courier, monospace;
-  height: 1.5rem;
-}
-
-.social-bar {
-  margin-top: 25px;
+  height: 1.6rem;
+  margin-bottom: 30px; /* Space before social icons */
 }
 
 .social-bar a {
   color: var(--text-main);
-  font-size: 1.6rem;
-  margin: 0 12px;
+  font-size: 1.8rem;
+  margin: 0 15px;
   transition: all 0.3s ease;
 }
 
@@ -69,34 +70,33 @@ h1 {
 }
 
 h2 {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--accent-color);
   border-bottom: 1px solid #333;
   padding-bottom: 8px;
   margin-top: 50px;
   text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 .row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 5px;
 }
 
 .project-card {
   margin: 25px 0;
-  padding-left: 20px;
-  border-left: 2px solid var(--accent-color);
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid var(--accent-color);
 }
 
 .git-link {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--accent-color);
   text-decoration: none;
   border: 1px solid var(--accent-color);
-  padding: 3px 10px;
+  padding: 4px 12px;
   border-radius: 4px;
 }
 
@@ -106,7 +106,7 @@ ul {
 }
 
 li {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   color: var(--text-dim);
 }
 
