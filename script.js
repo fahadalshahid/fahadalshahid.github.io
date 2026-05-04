@@ -1,26 +1,35 @@
-const text = [
-  "Computer Science Graduate",
+const roles = [
+  "Computer Science Student",
   "MERN Stack Developer",
-  "AI & Software Enthusiast"
+  "AI Enthusiast"
 ];
 
-let count = 0;
-let index = 0;
-let currentText = "";
-let letter = "";
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
 
-(function type() {
-  if (count === text.length) count = 0;
-  currentText = text[count];
-  letter = currentText.slice(0, ++index);
+function typeEffect() {
+  const currentRole = roles[roleIndex];
+  const typingElement = document.getElementById("typing");
 
-  document.getElementById("typing").textContent = letter;
-
-  if (letter.length === currentText.length) {
-    count++;
-    index = 0;
-    setTimeout(type, 2500); // Wait on full text
+  if (isDeleting) {
+    typingElement.textContent = currentRole.substring(0, charIndex--);
   } else {
-    setTimeout(type, 80);
+    typingElement.textContent = currentRole.substring(0, charIndex++);
   }
-})();
+
+  let typeSpeed = isDeleting ? 50 : 100;
+
+  if (!isDeleting && charIndex === currentRole.length + 1) {
+    typeSpeed = 2000; // Pause at end of word
+    isDeleting = true;
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    roleIndex = (roleIndex + 1) % roles.length;
+    typeSpeed = 500;
+  }
+
+  setTimeout(typeEffect, typeSpeed);
+}
+
+document.addEventListener("DOMContentLoaded", typeEffect);
